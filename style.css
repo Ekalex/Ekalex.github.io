@@ -11,6 +11,8 @@
     background-color: darkblue;
     text-align: center;
     font-family: 'coustard', serif;
+    color: floralwhite;
+    align-items: center;
 }
 header{
     grid-column: 1 / 4;
