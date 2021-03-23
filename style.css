@@ -9,6 +9,8 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-color: darkblue;
+    text-align: center;
+    font-family: 'coustard', serif;
 }
 header{
     grid-column: 1 / 4;
@@ -29,8 +31,10 @@ article{
     text-align: center;
     color: rgb(184, 220, 250);
     padding: 20px;
+    text-align: center;
     
 }
+
 
 footer{
     font-size: 2em;
@@ -39,4 +43,5 @@ footer{
 }
 a{
     border-style: ridge;
+    color:  darkgray;
 }
