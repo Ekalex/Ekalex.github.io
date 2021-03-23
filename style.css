@@ -2,29 +2,29 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    padding-top: 5px;
+    padding-top: 3px;
 
    
 
 }
 
 body{
-    background-image: url(Sauce-nero.jpg);
+    background-image: url(typing.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     text-align: center;
     padding: 10px;
     font-family: 'Coustard', serif;
-    font-size: 1.5em;
-    color: lightsteelblue;
+    font-size: 1.25em;
+    color: rgb(172, 206, 248);
     
 
 }
 
 h1{
     text-align: center;
-    color: rgb(0, 0, 0);
+    color: rgb(163, 156, 156);
 }
 
 .video{
