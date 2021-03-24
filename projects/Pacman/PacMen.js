@@ -12,12 +12,12 @@ var pos = 0;
             y: Math.random() * scale
         }
     }
-    // Factory to make a PacMan 
+ 
     function makePac() {
-        // returns an object with values scaled {x: 33, y: 21}
+        
         let velocity = setToRandom(10);
         let position = setToRandom(200);
-        // Add image to div id = game
+        
         let game = document.getElementById('game');
         let newimg = document.createElement('img');
         newimg.style.position = 'absolute';
@@ -26,7 +26,7 @@ var pos = 0;
         newimg.style.left = position.x;
         newimg.style.top = position.y;
         game.appendChild(newimg);
-        // new style of creating an object
+        
         return {
             position,
             velocity,
@@ -35,7 +35,7 @@ var pos = 0;
     }
 
     function update() {
-        //loop over pacmen array and move each one and move image in DOM
+       
         pacMen.forEach((item) => {
             checkCollisions(item)
             item.position.x += item.velocity.x;
@@ -45,6 +45,7 @@ var pos = 0;
             item.newimg.style.top = item.position.y;
         })
         setTimeout(update, 20);
+        
     }
 
     function checkCollisions(item) {
@@ -55,5 +56,6 @@ var pos = 0;
     }
 
     function makeOne() {
-        pacMen.push(makePac()); // add a new PacMan
+        pacMen.push(makePac()); 
+      
     }
