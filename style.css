@@ -1,17 +1,35 @@
+
+@import url('https://fonts.googleapis.com/css?family=Lobster&display=swap') repeat scroll 0 0 rgba(0, 0, 0 , 0);
+
+.wrapper {
+    background: url("https://images.unsplash.com/photo-1465146633011-14f8e0781093?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3450&q=80");
+    color: #eee;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+    perspective-origin: 50% 50%;
+    animation: animation 100s linear infinite;
+  }
+
+  @keyframes animation {
+    100%{
+     background-position:0px -3000px;
+   }
+ }
+
+
 .grid{
     display: grid;
     grid-template-columns: 200px 1fr 200px;
     grid-template-rows: auto 1fr auto;
     gap: 5px;
-    height: 90vh;
-    background-image: url(typing.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-color: darkblue;
+    height: 100%;    
     text-align: center;
-    font-family: 'coustard', serif;
-    color: floralwhite;
+    font-size: 2em
+    font-family: 'Lobster', cursive;
     align-items: center;
 }
 header{
@@ -20,30 +38,24 @@ header{
 
 }
 .navbar{
-    border-style: solid;
-    font-size: 2em ;
+    border-style: solid; ;
     grid-column: 1 / 4;
     background-color: steelblue;
 }
 
 article{
    
-    font-size: 1.5em;
+    
     grid-column: 1 / 4;
     text-align: center;
-    color: rgb(184, 220, 250);
     padding: 20px;
     text-align: center;
     
 }
 
 
-footer{
-    font-size: 2em;
-    grid-column: 1 / 4;  
-    text-align: center;
-}
+
 a{
-    border-style: ridge;
+    border-style: dotted;
     color:  darkgray;
 }
