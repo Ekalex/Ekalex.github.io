@@ -40,7 +40,6 @@ header{
 .navbar{
     border-style: solid; ;
     grid-column: 1 / 4;
-    background-color: steelblue;
 }
 
 article{
