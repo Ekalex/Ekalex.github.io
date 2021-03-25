@@ -1,0 +1,42 @@
+
+
+.grid{
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;
+    grid-template-rows: auto 1fr auto ;
+    gap: 5px;
+    height: 90vh;
+    text-align: center;
+
+}
+header{
+    grid-column: 1 / 4;
+}
+footer{
+    grid-column: 1 / 4;
+}
+
+header{
+    border-style: solid;
+    background: rgb(88, 82, 82);
+    font-size: 2em ;
+}
+aside{
+    border-style: solid;
+    background: rgb(107, 97, 97);
+    font-size: 2em;
+}
+aside{
+    border-style: solid;
+    background: rgb(74, 74, 77)
+}
+article{
+    border-style: solid;
+    background: rgb(77, 73, 73);
+    font-size: 2em;
+}
+footer{
+    border-style: solid;
+    background: rgb(94, 88, 88);
+    font-size: 2em;
+}
