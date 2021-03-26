@@ -1,12 +1,22 @@
-body{
-    background-color: black;
-    color: lightgrey
+
+
+body{  
+background-color: black;
+color: steelblue;
+
+    
 }
 
 .img-fluid{
     max-width: 45%;
     height: auto;
-    background: darkgrey;
+    background: darkgrey
+}
+
+.vid{
+    max-width: 55%;
+    height: auto;
+    
 }
 
 
