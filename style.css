@@ -17,4 +17,13 @@ color: steelblue;
     
 }
 
+.blockquote1{
+    background-image: url("blackhole.jpg");
+    background-repeat: no-repeat;
+    color: lightslategray;
+    padding: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
 
