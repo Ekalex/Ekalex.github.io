@@ -27,6 +27,15 @@ font-family: 'Raleway', sans-serif;
     max-width: 60%;
     height: auto;
 }
+.fab{
+    height: 150%;
+    width: auto;
+    color: steelblue;
+}
+button{
+    background-color: black;
+    color: steelblue;
+}
 
 
 
