@@ -9,7 +9,7 @@ font-family: 'Raleway', sans-serif;
 .img-fluid{
     max-width: 45%;
     height: auto;
-    background: darkgrey
+    background: darkslategray;
 }
 
 .vid{
@@ -26,9 +26,10 @@ font-family: 'Raleway', sans-serif;
 .img-fluid2{
     max-width: 60%;
     height: auto;
+    background-color: darkslategray;
 }
 .fab{
-    height: 150%;
+    max-width: 150%;
     width: auto;
     color: steelblue;
 }
@@ -36,7 +37,16 @@ button{
     background-color: black;
     color: steelblue;
 }
+.img-fluid3{
+    max-height: 25%;
+    width: auto;
+    background-color: darkslategray;
+}
 
+.eyes{
+    max-height: 200%;
+    width: auto;
+}
 
 
 
