@@ -21,6 +21,7 @@ async function run() {
   //   followMarker.push(locations[0].attributes.longitude);
 
   new mapboxgl.Marker().setLngLat(latLong).addTo(map);
+ 
 
   console.log(new Date());
   console.log(latLong);
@@ -28,6 +29,8 @@ async function run() {
 
   setTimeout(run, 6000);
 }
+
+
 
 async function getBusLocations() {
   const url = "https://api-v3.mbta.com/vehicles?filter[route]=1&include=trip";
@@ -40,4 +43,13 @@ async function getBusLocations() {
 }
 
 run();
+
+function remove(){
+  var marker = new mapboxgl.Marker().addTo(map);
+  marker.remove();
+}
+
+
+
+
 console.log(mapboxgl.Map.center);
