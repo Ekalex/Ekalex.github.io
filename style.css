@@ -51,6 +51,10 @@ button{
     max-height: 200%;
     width: 100%;
 }
+.map{
+    width: 100%;
+    height: auto;
+}
 
 
 

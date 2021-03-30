@@ -1,59 +1,43 @@
-var pos = 0;
-    const pacArray = [
-        ['PacMan1.png', 'PacMan2.png'],
-        ['PacMan3.png', 'PacMan4.png']
-    ];
-    var direction = 0;
-    const pacMen = [];
+//https://api-v3.mbta.com/vehicles?filter[route]=1&include=trip
 
-    function setToRandom(scale) {
-        return {
-            x: Math.random() * scale,
-            y: Math.random() * scale
-        }
-    }
-    // Factory to make a PacMan 
-    function makePac() {
-        // returns an object with values scaled {x: 33, y: 21}
-        let velocity = setToRandom(10);
-        let position = setToRandom(200);
-        // Add image to div id = game
-        let game = document.getElementById('game');
-        let newimg = document.createElement('img');
-        newimg.style.position = 'absolute';
-        newimg.src = 'PacMan1.png';
-        newimg.width = 100;
-        newimg.style.left = position.x;
-        newimg.style.top = position.y;
-        game.appendChild(newimg);
-        // new style of creating an object
-        return {
-            position,
-            velocity,
-            newimg
-        }
-    }
+mapboxgl.accessToken = "pk.eyJ1IjoiZWthbGV4MDgiLCJhIjoiY2ttMTNzZmdtMDMxdDJwanZtajMwbzBoaiJ9.Rb0d4g6qLSpGbG8iIyvBJw";
 
-    function update() {
-        //loop over pacmen array and move each one and move image in DOM
-        pacMen.forEach((item) => {
-            checkCollisions(item)
-            item.position.x += item.velocity.x;
-            item.position.y += item.velocity.y;
+const map = new mapboxgl.Map({
+  container: "map",
+  //   style: "mapbox://styles/mapbox/dark-v10",
+  style: "mapbox://styles/mapbox/dark-v10", //I just changed the style
+  center: [-71.091542, 42.358862],
+  zoom: 14,
+});
 
-            item.newimg.style.left = item.position.x;
-            item.newimg.style.top = item.position.y;
-        })
-        setTimeout(update, 20);
-    }
+async function run() {
+  const locations = await getBusLocations();
+  let latLong = [];
+  latLong.push(locations[0].attributes.longitude); //this will push the json data of longitude in latLong Array
+  latLong.push(locations[0].attributes.latitude); //this will push the json data of latitude in latLong Array
 
-    function checkCollisions(item) {
-        if (item.position.x + item.velocity.x + item.newimg.width > window.innerWidth ||
-            item.position.x + item.velocity.x < 0) item.velocity.x = -item.velocity.x;
-        if (item.position.y + item.velocity.y + item.newimg.height > window.innerHeight ||
-            item.position.y + item.velocity.y < 0) item.velocity.y = -item.velocity.y;
-    }
+  //   followMarker = [];
+  //   followMarker.push(locations[0].attributes.latitude); //this will push the json data of longitude in latLong Array
+  //   followMarker.push(locations[0].attributes.longitude);
 
-    function makeOne() {
-        pacMen.push(makePac()); // add a new PacMan
-    }
+  new mapboxgl.Marker().setLngLat(latLong).addTo(map);
+
+  console.log(new Date());
+  console.log(latLong);
+  //marker.setLngLat(latLong);
+
+  setTimeout(run, 6000);
+}
+
+async function getBusLocations() {
+  const url = "https://api-v3.mbta.com/vehicles?filter[route]=1&include=trip";
+  //   const url = "https://cdn.mbta.com/realtime/VehiclePositions_enhanced.json";
+  // const url =
+  //   "https://api-v3.mbta.com/trips/%22job%22?fields%5Btrip%5D=%22vehicle%22&include=%22route%22";
+  const response = await fetch(url);
+  const json = await response.json();
+  return json.data;
+}
+
+run();
+console.log(mapboxgl.Map.center);
