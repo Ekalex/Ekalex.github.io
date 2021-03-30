@@ -1,10 +1,9 @@
-//https://api-v3.mbta.com/vehicles?filter[route]=1&include=trip
-
 mapboxgl.accessToken = "pk.eyJ1IjoiZWthbGV4MDgiLCJhIjoiY2ttMTNzZmdtMDMxdDJwanZtajMwbzBoaiJ9.Rb0d4g6qLSpGbG8iIyvBJw";
 
 const map = new mapboxgl.Map({
   container: "map",
-  style: "mapbox://styles/mapbox/dark-v10", 
+  //   style: "mapbox://styles/mapbox/streets-v11",
+  style: "mapbox://styles/mapbox/satellite-streets-v11", //I just changed the style
   center: [-71.091542, 42.358862],
   zoom: 14,
 });
